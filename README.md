@@ -22,6 +22,7 @@ A Simple Image Hosting Webpage-Server Combination
 - [ ] All of the above Features
 -   [ ] Administrators can approve uploaded Images
 -   [ ] Administrators can remove uploaded Images
+-   [ ] Administratos can remove comments
 -   [ ] Administrators can Restrict the Privileges of Account Holders' that post innapropriate/offensive content
 -   [ ] Administrators can delete comments deemed innappropriate/offensive
 -   [ ] Administrators can grant Admin Privileges
