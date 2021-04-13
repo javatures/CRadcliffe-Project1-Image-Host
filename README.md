@@ -38,6 +38,8 @@ A Simple Image Hosting Webpage-Server Combination
 
 ## Images Table
 - [ ] Image Id (Primary Key)
+- [ ] User ID (foreign key to users table)
+- [ ] Description
 - [ ] Image URL
 - [ ] Upvotes
 - [ ] Downvotes

@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'CRadcliffe-Project1-Image-Host'
-include('app')
+include('lib')
