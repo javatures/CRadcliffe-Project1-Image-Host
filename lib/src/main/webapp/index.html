@@ -1,0 +1,52 @@
+<!DOCTYPE <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Welcome</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js"></script>
+    </head>
+    <body onload="load()">
+        <div class="content" >
+        <h1>Image Host</h1>        
+            <div id=loggedin onload="loggedin()"></div>
+            <ul>
+                <li><a href="." >Home</a></li>
+                <li><a href="login" >Login</a></li>
+                <li><a href="signup" >Sign Up</a></li>
+                <li><a href="https://github.com/javatures/CRadcliffe-Project1-Image-Host">About</a></li>
+            </ul>
+        <table class="current">
+            <img id="curpic" src="" title="0" alt="" />
+            <figcaption id="uploader"></figcaption>
+        </table>
+        <ul>
+            <li><button onclick="downvote()">Downvote</button></li>
+            <li><button onclick="prev()" >Previous</button></li>
+            <li><button onclick="rand()">Random</button></li>
+            <li><button onclick="next()">Next</button></li>
+            <li><button onclick="upvote()">Upvote</button></li>
+            <li><button onclick="report(true)">Report</button></li>
+        </ul>
+        <table>
+            <tr>
+                <td><img onclick="swap('under1')" id="under1" src="images\405603.jpg" /></td>
+                <td><img onclick="swap('under2')" id="under2" src="images\406437.jpg" /></td>
+                <td><img onclick="swap('under3')" id="under3" src="images\406495.jpg" /></td>
+                <td><img onclick="swap('under4')" id="under4" src="images\406581.jpg" /></td>
+                <td><img onclick="swap('under5')" id="under5" src="images\406952.jpg" /></td>
+            </tr>
+        </table>
+    </div>
+    <div id="comments">
+
+    </div>
+    </body>
+</html>

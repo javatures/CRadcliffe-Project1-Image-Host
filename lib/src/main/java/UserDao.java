@@ -119,6 +119,27 @@ public class UserDao implements Dao<User> {
         
     }
 
+    public User retrieveN(User e) {
+         // TODO Auto-generated method stub
+         String sql = "Select * from users where userName = ?";
+
+         try {
+             PreparedStatement statement = server.prepareStatement(sql);
+             statement.setString(1, e.userName);
+             ResultSet results = statement.executeQuery();
+             if(results.next()){
+                 User user = new User(results.getInt("id"), results.getString("userName"), results.getString("password"), results.getBoolean("pLevel"), results.getInt("restrictions"));
+                 return user;
+             }
+             
+ 
+         } catch (SQLException e1) {
+             //TODO: handle exception
+         }
+ 
+        return null;
+    }
+
 
     
 }

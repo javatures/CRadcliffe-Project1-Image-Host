@@ -16,7 +16,7 @@ public class ImageDao  implements Dao<Image>{
     @Override
     public void create(Image e) {
         // TODO Auto-generated method stub
-        String sql = "Insert into images (url , description , user , upvotes , downvotes) values (? , ? , ? , ? , ?)";
+        String sql = "Insert into images (url , description , uid , upvotes , downvotes) values (? , ? , ? , ? , ?)";
         try {
             PreparedStatement statement = server.prepareStatement(sql);
             statement.setString(1, e.url);
@@ -43,7 +43,7 @@ public class ImageDao  implements Dao<Image>{
             statement.setInt(1, e.id);
             ResultSet results = statement.executeQuery();
             if(results.next()){
-                Image image = new Image(results.getInt("id"), results.getString("url"), results.getString("description"), results.getInt("user"), results.getInt("upvotes") , results.getInt("downvotes"));
+                Image image = new Image(results.getInt("id"), results.getString("url"), results.getString("description"), results.getInt("uid"), results.getInt("upvotes") , results.getInt("downvotes"));
 
                 return image;
             }
@@ -104,7 +104,7 @@ public class ImageDao  implements Dao<Image>{
 
             while(results.next()){
                 images.add(new Image(results.getInt("id"), results.getString("url"), results.getString("description"), 
-                                    results.getInt("user"), results.getInt("upvotes") , results.getInt("downvotes")));
+                                    results.getInt("uid"), results.getInt("upvotes") , results.getInt("downvotes")));
             }
             return images;
         } catch (SQLException e) {

@@ -51,6 +51,28 @@ public class CommentDao implements Dao<Comment>{
         }
         return null;
     }
+    public ArrayList<Comment> retrieveI(Comment e) {
+        String sql = "Select * from comments where iid = ? order by (id)";
+
+        try {
+            PreparedStatement statement = server.prepareStatement(sql);
+            statement.setInt(1, e.iID);
+            ResultSet results = statement.executeQuery();
+            ArrayList<Comment> comments = new ArrayList<>();
+            while(results.next()){
+                
+                comments.add(new Comment(results.getInt("id"), results.getInt("iid"), results.getInt("uid") , results.getString("comment")));
+
+                
+            }
+            return comments;
+            
+
+        } catch (SQLException e1) {
+            //TODO: handle exception
+        }
+        return null;
+    }
 
     @Override
     public void update(Comment e) {
